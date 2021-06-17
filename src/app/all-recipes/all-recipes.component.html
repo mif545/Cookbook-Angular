@@ -1,0 +1,35 @@
+
+<div  *ngIf="!theRecipe&&!addRecipeIfTrue">
+
+
+  <div class="s">
+    <input type="number" class="textbox" placeholder="חפש לפי זמן הכנה" [(ngModel)]="time" (keyup)="f()">
+    <button  class="button"><span class="glyphicon glyphicon-search"></span></button>
+  </div>
+
+  <div class="s">
+  <select class="textbox"   [(ngModel)]="category" (click)="f()" >
+    <option value=0  >הצג הכל </option>
+    <option value={{c.Code}} *ngFor="let c of listCategory" >{{c.Name}} </option>
+    <button  class="button"><span class="glyphicon glyphicon-search"></span></button>
+  </select> 
+
+ </div> 
+ <div class="s">
+  <input type="text" class="textbox" placeholder="חפש לפי שם המתכון" [(ngModel)]="name" (keyup)="f()">
+  <button  class="button"><span class="glyphicon glyphicon-search"></span></button> 
+</div>
+
+
+
+
+  <div>
+    <deatails-recipes *ngFor="let r of filterlist" [myRecipe]="r" (onShow)="showRecipe($event)"> </deatails-recipes>
+ 
+    <input type="button" value="הוסף מתכון" (click)="showAddRecipe()"  class="add" class="add"> 
+ </div>
+
+</div> 
+<div *ngIf="addRecipeIfTrue">
+  <add-recipe   (onAdd)="addRecipe($event)"></add-recipe>
+</div>

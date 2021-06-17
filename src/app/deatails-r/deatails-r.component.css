@@ -1,0 +1,83 @@
+.theRecipe{
+    direction: rtl;
+    margin-right: 50px;
+    
+}
+.derug{
+    float: right;
+}
+input{
+color: blanchedalmond;
+background-color: black;
+margin-right: 10px;
+}
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    font-size: 35px;
+  }
+  .rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+  }
+  .rating > span:hover:before,
+  .rating > span:hover ~ span:before {
+     content: "\2605";
+     position: absolute;
+     color:rgb(247, 247, 11);
+  }
+
+  
+  .head2{
+    margin-top: 7%;
+    width: 30%;
+    
+    
+    margin-right: 7%;
+    float: right;
+}
+  .head1{
+      margin-left: 5%;
+      margin-right: 3%;
+      width: 90%;
+      height:450px;
+      background-color:floralwhite;
+     
+      
+  }
+  img{
+    margin-bottom: 3%;
+    margin-top: 3%;;
+    height: 83%;
+  }
+ .deatails{
+    text-align: center;
+ }
+ .ingredient{
+   width: 45%;
+   height: 20%;
+   margin-right: 25%;
+   margin-left: 30%;
+   text-align: right;
+   font-size: 20px;
+   margin-top: 5%;
+
+ }
+ .b{
+  margin-left: 7%;
+   float: left;
+   color: black;
+ }
+ .ab{
+   margin-top: 3%;
+   margin-bottom: 3%;
+  margin-left: 37%;
+ 
+}
+/* body {
+  background: url('http://i.hizliresim.com/v4Qykv.png')
+} */
+
+
+ 

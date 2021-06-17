@@ -1,0 +1,80 @@
+
+
+
+ <div class="container login-container">
+    <div class="row">
+        <div class="col-md-6 login-form-1">
+         
+            <div >
+                <div class="form-group">
+                    <label>קוד מתכון</label>
+                    <br>
+                    <input type="text" [(ngModel)]="newRecipe.Code" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>שם מתכון</label>
+                    <br>
+                    <input type="text"  [(ngModel)]="newRecipe.Name" class="form-control"  >
+                  
+                </div>
+
+                <div class="form-group" *ngIf=categoryList >
+                    <label>קטגוריה</label>
+                    <br>
+                    <select class="form-control" [(ngModel)]="newRecipe.CodeCategory">
+                        <option value={{c.Code}} *ngFor="let c of categoryList" >{{c.Name}} </option>      
+                     </select> 
+                      
+                   
+                </div>
+
+
+                <div class="form-group">
+                    <label>זמן הכנה</label>
+                    <br>
+                    <input type="number" [(ngModel)]="newRecipe.PreparationTime" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>דרגת קושי</label>
+                    <br>
+                    <input type="number" [(ngModel)]="newRecipe.LevelDifficulty" class="form-control">
+                    <div class="red" *ngIf="newRecipe.LevelDifficulty>5">רמת קושי מקסימום 5*</div>
+                </div>
+
+                <div class="form-group">
+                    <label>רכיבים</label>
+                    <br>
+                    <div *ngFor="let r of rechivim1;index as i">
+                        <input type="text"  (blur)="addInput1(t.value)" #t class="form-control">
+                        <br>
+                        
+                   </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label>אופן ההכנה</label>
+                    <br>
+                    <div *ngFor="let r of p1;index as i">
+                        <input type="text"  (blur)="addInput2(t.value)" #t class="form-control">
+                        <br>
+                        
+                   </div>         
+                </div>
+                
+
+               
+                
+                <div class="form-group">
+                    <input type="button" value="הוסף מתכון"  (click)="saveAdd()" class="btnSubmit"> 
+                    
+                   
+                </div>
+               
+            </div>
+        </div>
+       
+    </div>
+  </div>

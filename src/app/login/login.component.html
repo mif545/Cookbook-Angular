@@ -1,0 +1,28 @@
+
+<div class="container login-container">
+  <div class="row">
+      <div class="col-md-6 login-form-1">
+         
+          <form [formGroup]="myForm" (ngSubmit)="conection()">
+              <div class="form-group">
+                <!-- <div *ngIf="myForm.controls.Name.touched&&myForm.controls.Name.errors">*שדה חובה </div> -->
+                  <input type="text" class="form-control"  value=""   formControlName="Name" placeholder="שם משתמש*" />
+                 
+              </div>
+              <div class="form-group">
+                  <input type="password" class="form-control" placeholder="סיסמא*" value=""  formControlName="Password"/>
+              </div>
+              <div class="form-group">
+                  <input type="submit" class="btnSubmit" value="Login" [disabled]="!myForm.valid"  />
+              </div>
+          
+          </form>
+      </div>
+     
+  </div>
+</div>
+
+   
+   
+
+    

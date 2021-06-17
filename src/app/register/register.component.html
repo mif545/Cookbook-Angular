@@ -1,0 +1,42 @@
+
+
+
+<div class="container login-container">
+  <div class="row">
+      <div class="col-md-6 login-form-1">
+          <form [formGroup]="myForm1" (ngSubmit)="addTheUser()">
+              <div class="form-group">
+                  <input type="text" class="form-control"  value=""   formControlName="Code"  placeholder="קוד משתמש*" />
+                  <div class="red" *ngIf="myForm1.controls.Code.touched&&myForm1.controls.Code.errors?.myRangeError">ת"ז צריכה להיות בעלת 9 ספרות</div>
+              </div>
+              <div class="form-group">
+                  <div *ngIf=theName>
+                  <input type="text" class="form-control"  value={{theName}} placeholder={{theName}}  formControlName="Name"/>
+                </div>
+                <div *ngIf=!theName>
+                    <input type="text" class="form-control"  value="" placeholder="שם משתמש*"  formControlName="Name"/>
+                  </div>
+                  <div class="red" *ngIf="myForm1.controls.Name.touched&&myForm1.controls.Name.errors?.pattern">*הזן שם בעברית</div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control"  value=""   formControlName="Mail" placeholder="כתובת מייל*" />
+                <div class="red" *ngIf="myForm1.controls.Mail.touched&&myForm1.controls.Mail.errors?.pattern">*כתובת מייל אינה חוקית </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="כתובת*" value=""  formControlName="Address"/>
+       
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control"  value=""   formControlName="Password" placeholder="סיסמא*" />
+              <div class="red" *ngIf="myForm1.controls.Password.touched&&myForm1.controls.Password.errors?.pattern">*הסיסמא אינה חוקית</div>
+          </div>
+         
+              <div class="form-group">
+                  <input type="submit" class="btnSubmit" value="sign in" [disabled]="!myForm1.valid" />
+              </div>
+             
+          </form>
+      </div>
+     
+  </div>
+</div>

@@ -1,0 +1,56 @@
+
+ 
+<div class="theRecipe" *ngIf=RecipeToShow>
+ <div class="head1">
+    <div class="head2">
+          <h1>{{RecipeToShow.Name}} </h1>
+
+          <div *ngFor="let cat of CategoryArr">
+            <div  *ngIf="cat.Code==RecipeToShow.CodeCategory">
+                <h3 ><img src={{cat.RoutingToIcon}}  width="40" height="40" >{{cat.Name}} </h3>
+          </div>
+         </div> 
+
+         {{f()}}
+
+         <div  *ngFor="let x of arr" class="derug" >
+   
+            <div class="rating">
+                <span>☆</span>
+             </div>
+        </div>
+    </div>
+
+     
+    <img src={{RecipeToShow.Image}} alt="Cinque Terre" width="600" height="300" margin-top="10" >
+     
+  </div>  
+
+
+    <div class="deatails">
+        <div class="ingredient">  
+                <label><img src="./assets/הכנה.png" width="30" height="30" ><b>חומרים</b></label> 
+              <div *ngFor="let ingredient of RecipeToShow.Ingredients; index as i">
+                <p>{{i+1}} {{ingredient}}</p> 
+              </div>
+
+
+
+               <label><img src="./assets/אה.png" width="30" height="30" >אופן ההכנה</label> 
+              <div *ngFor="let p of RecipeToShow.Preparation; index as i">
+               <p> {{p}}</p>
+              </div> 
+        </div> 
+<div class="ab">
+  <div class="b">
+       <input type="button" (click)="backallrecipe(RecipeToShow) " value="צפה בכל המתכונים " class="btn btn-primary active" style="background-color: black;">
+      </div>
+      
+
+      <div  class="b" >
+        <input Edit type="button" (click)="editTheRecipe(RecipeToShow) " value="ערוך את פרטי המתכון"  class="btn btn-primary active" style="background-color: black;"  > 
+    </div>
+  </div>
+</div>
+
+</div>

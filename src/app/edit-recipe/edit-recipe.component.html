@@ -1,0 +1,58 @@
+
+
+
+
+ <div class="container login-container" *ngIf="RecipeToEdit">
+    <div class="row">
+        <div class="col-md-6 login-form-1">
+         
+            <div >
+                <div class="form-group">
+                    <label>שם המתכון</label>
+                    <br>
+                    <input type="text" [(ngModel)]="RecipeToEdit.Name" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>זמן הכנת המתכון</label>
+                    <br>
+                    <input type="text" [(ngModel)]="RecipeToEdit.PreparationTime" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>רמת קושי</label>
+                    <br>
+                    <input type="text" [(ngModel)]="RecipeToEdit.LevelDifficulty" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>רכיבים</label>
+                     {{thearr()}}
+                    <div *ngFor="let ing of arr ; index as i;trackBy:funcindex">
+                        <div *ngIf="arr[i]">
+                        <br>
+                        <input type="text" [(ngModel)]="arr[i]" class="input" class="form-control" (blur)="check()" >
+                        </div>
+                    </div>      
+                </div>
+
+                <div class="form-group">
+                    <label>אופן ההכנה</label>     
+                    <div *ngFor="let ing of brr ; index as i;trackBy:funcindex">
+                        <div *ngIf="brr[i]">
+                        <br>
+                        <input type="text" [(ngModel)]="brr[i]" class="input" class="form-control" (blur)="check1()" >
+                        </div>
+                    </div>      
+                </div>
+
+                <div class="form-group">
+                    <input type="button" class="cencel" class="btnSubmit"  value="בטל"  (click)="cencel()"> 
+                    <input type="button" class="btnSubmit" value="שמור "  (click)="save()">   
+                </div>
+               
+            </div>
+        </div>
+       
+    </div>
+  </div>
